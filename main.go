@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	err := filepath.Walk("C:/Users/Ricardo/Videos/compress", func(path string, info os.FileInfo, err error) error {
+	err := filepath.Walk("C:/teste/compress", func(path string, info os.FileInfo, err error) error {
 		var input, output string
 
 		if err != nil {
@@ -19,8 +19,8 @@ func main() {
 		if !info.IsDir() {
 			fmt.Printf("Compress filename: %s\n", info.Name())
 
-			input = "C:/Users/Ricardo/Videos/compress/" + info.Name()
-			output = "C:/Users/Ricardo/Videos/compressed/" + info.Name()
+			input = "C:/teste/compress/" + info.Name()
+			output = "C:/teste/compressed/" + info.Name()
 
 			cmd := exec.Command("ffmpeg",
 				"-i",
